@@ -1,0 +1,38 @@
+#+title: Numpy
+#+author: Erik An
+#+email: obluda2173@gmail.com
+#+date: <2026-07-09>
+#+lastmod: <2026-07-09 13:25>
+#+latex: \newpage
+#+latex_header: \setlength{\parindent}{0pt}
+#+latex_header: \setlength{\parskip}{1em}
+#+latex_header: \usepackage{amsmath}
+#+latex_header: \usepackage{amssymb}
+#+latex_header: \usepackage{mathtools}
+#+latex_header: \usepackage{amsthm}
+#+latex_header: \usepackage[margin=1in]{geometry}
+#+options: num:t tags:nil
+#+property: header-args :eval never-export
+#+startup: overview latexpreview inlineimages
+#+columns: %50ITEM(Item) %8LECTURE_REF(Lecture) %34CUSTOM_ID(ID)
+
+* Introduction
+
+Numpy (Numerical Python) is a python library that is widely used in science and engineering.
+
+Since numpy is a library it should be imported to the working file:
+
+#+begin_src python :results output
+import numpy as np
+
+a = np.array([[1,2],
+             [3,4],
+             [5,6]])
+
+print(a.shape)
+print(a.ndim)
+#+end_src
+
+#+RESULTS:
+: (3, 2)
+: 2

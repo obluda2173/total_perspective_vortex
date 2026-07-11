@@ -1,0 +1,72 @@
+#+title: Research
+#+author: Erik An
+#+email: obluda2173@gmail.com
+#+date: <2026-05-26>
+#+lastmod: <2026-07-11 12:28>
+#+latex: \newpage
+#+latex_header: \setlength{\parindent}{0pt}
+#+latex_header: \setlength{\parskip}{1em}
+#+latex_header: \usepackage{amsmath}
+#+latex_header: \usepackage{amssymb}
+#+latex_header: \usepackage{mathtools}
+#+latex_header: \usepackage{amsthm}
+#+latex_header: \usepackage[margin=1in]{geometry}
+#+options: num:t tags:nil
+#+property: header-args :eval never-export
+#+startup: overview latexpreview inlineimages
+#+columns: %50ITEM(Item) %8LECTURE_REF(Lecture) %34CUSTOM_ID(ID)
+
+* Main project goals
+
+My main project goals are:
+
+- Having the first experience with neuroscience project.
+
+  - Working with EEG data.
+
+  - Creating pipelines.
+
+- Designing projects architecture.
+
+- Learning python.
+
+  - mne, scikit-learn, nympy.
+
+- Applying linear algebra knowledge directly.
+
+* My concerns
+
+My concerns are:
+
+The project is difficult. Its subdomain is neuroscience, which I do not know anything about. This creates a vague understanding of where I should look for information, where should I learn.
+
+Tight now llm is my main source of truth. And I do not want to rely on llm too much for it to not interfere in my learning process, since its the main objective.
+
+I need some structure to start learning. Something I can start off.
+
+* Questions
+
+** DONE What is cerebral activity?
+
+Cerebral activity is an electrical and chemical processes occuring in cerebrum.
+
+** DONE What is a cerebrum?
+
+Cerebrum is tha largest part of the brain, made up of two cerebral hemispheres and their cortex, white matter, and subcortial structures, responsible for higher functions like reasoning, sensory processing, and voluntary movement.
+
+** DONE What is MNE?
+
+MNE is a python module for processing, analysis, and visualization of functional neuroimaging data.
+
+** DONE What scikit-learn python library focuses on?
+
+Scikit-learn is a python library, which focuses on machine learning and data analysis.
+
+** DONE What is dimensionality reduction?
+
+Dimensionality reduction is the process of transforming data from high-dimensional space int lower-dimensional one, while preserving as much information of structure as possible.
+
+* V.1.1 Preprocessing
+
+** TODO Maybe there are channels that I need to ignore?
+** TODO What frequency bands I am looking for?
