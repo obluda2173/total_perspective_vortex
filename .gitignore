@@ -1,5 +1,18 @@
+# system files
 .DS_Store
-.idea
+
+# IDE junk
+.vscode/
+
+# latex
+*.aux
 *.log
-tmp/
+*.out
+*.toc
+*.tex
+
+# personal
+_archive/
+
+# data
 data/
