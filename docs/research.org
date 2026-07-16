@@ -2,7 +2,7 @@
 #+author: Erik An
 #+email: obluda2173@gmail.com
 #+date: <2026-05-26>
-#+lastmod: <2026-07-13 14:54>
+#+lastmod: <2026-07-16 14:44>
 #+latex: \newpage
 #+latex_header: \setlength{\parindent}{0pt}
 #+latex_header: \setlength{\parskip}{1em}
@@ -71,12 +71,17 @@ Dimensionality reduction is the process of transforming data from high-dimension
 
 * V.1.1 Preprocessing, parsing and formating
 
-** TODO Maybe there are channels that I need to ignore?
+** DONE Maybe there are channels that I need to ignore?
 
+No. I will be using the CSP dimensionality reduction algorithm. It needs to work with all of the channels.
 
-** TODO What frequency bands I am looking for?
+** DONE What frequency bands I am looking for?
 
-** TODO What is CSP?
+7-30 hz.
+
+** DONE What is CSP?
+
+Its a dimensionality reduction algorithm, where CSP stands for "Common Spatial Pattern". More on that algorithm find in [[file:./csp.org][csp.org]].
 
 * V.1.2 Treatment pipeline
 
