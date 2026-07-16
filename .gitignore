@@ -11,8 +11,16 @@
 *.toc
 *.tex
 
+# python trash
+__pycache__
+.pytest_cache/
+
 # personal
 _archive/
 
 # data
 data/
+
+# temporarily
+optimizing_spatial_filters_eeg.pdf
+Makefile
