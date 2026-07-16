@@ -1,0 +1,99 @@
+#+title: Csp
+#+author: Erik An
+#+email: obluda2173@gmail.com
+#+date: <2026-07-16>
+#+lastmod: <2026-07-16 13:05>
+#+latex: \newpage
+#+latex_header: \setlength{\parindent}{0pt}
+#+latex_header: \setlength{\parskip}{1em}
+#+latex_header: \usepackage{amsmath}
+#+latex_header: \usepackage{amssymb}
+#+latex_header: \usepackage{mathtools}
+#+latex_header: \usepackage{amsthm}
+#+latex_header: \usepackage[margin=1in]{geometry}
+#+options: num:t tags:nil
+#+property: header-args :eval never-export
+#+startup: overview latexpreview inlineimages
+#+columns: %50ITEM(Item) %8LECTURE_REF(Lecture) %34CUSTOM_ID(ID)
+
+* Supplementary
+
+** Variance
+
+Variance quantifies how far is a set of numbers is spread out from the average (the mean).
+
+$$\mathrm{var}(x) = \dfrac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}$$
+
+where:
+- $s^2$: is a sample variance
+- $n$: is the number of observation sample
+- $x_i$: is $i$ th element of the sample
+- $\bar{x}$: is a sample mean
+
+Facts:
+- The variance is expressed in squared units of the original data.
+- Because the deviations from the mean are squared, values that are unusually far from the mean (outliers) have a disproportionately large impact on the total variance.
+- The standard deviation is simply the square root of the variance ($\sigma$ or $s$).
+
+** Covariance
+
+Covariance measures how two variables change together:
+
+$$\mathrm{cov}(x, y) = \dfrac{\sum_{i=1}^{n} (x_i - \bar{x}) (y_i - \bar{y})}{n-1}$$
+
+** Covariance matrix
+
+\begin{align*}
+\Sigma &=
+\begin{bmatrix}
+\mathrm{var}(x) & \mathrm{cov}(x, y) \\
+\mathrm{cov}(y, x) & \mathrm{var}(y)
+\end{bmatrix}
+\end{align*}
+
+If covarience matrix is taking form of:
+
+- *Sphere* (equal variance):
+
+  \begin{align*}
+  \Sigma &=
+  \begin{bmatrix}
+  1 & 0 \\
+  0 & 1
+  \end{bmatrix}
+  \end{align*}
+
+  $x$ and $y$ have no linear realtionship.
+
+- *Axis-Aligned Ellipse* (unequal variance):
+
+  \begin{align*}
+  \Sigma &=
+  \begin{bmatrix}
+  3 & 0 \\
+  0 & 1
+  \end{bmatrix}
+  \end{align*}
+
+  The data stretches along the horizontal axis, but stays tight vertically. $x$ and $y$ have no linear realtionship.
+
+- *Tilted Ellipse* (non zero covariance):
+
+  \begin{align*}
+  \Sigma &=
+  \begin{bmatrix}
+  2 & 1.5 \\
+  1.5 & 2
+  \end{bmatrix}
+  \end{align*}
+
+  The positive covariance ($1.5$) forces the ellipse to tilt upward from bottom-left to top-right, showing that as $x$ increases, $y$ also tends to increase.
+
+** Covariance matrix (CSP)
+
+The algorithm starts with $\Sigma^{(+)}$ and $\Sigma^{(-)}$ (over band-pass filtered EEG signals). They capture how electrical activity from each channel varies and covaries with one another during two states.
+
+
+* Objective
+
+The goal of the CSP algorithm is to find weights (a spatial filter) such that for your electrodes that makes the signal variance huge for Class A (e.g. left hand motor imagery) and tiny for Class B (e.g. right hand motor imagery).

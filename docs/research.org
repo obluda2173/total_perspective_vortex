@@ -2,7 +2,7 @@
 #+author: Erik An
 #+email: obluda2173@gmail.com
 #+date: <2026-05-26>
-#+lastmod: <2026-07-11 12:28>
+#+lastmod: <2026-07-13 14:54>
 #+latex: \newpage
 #+latex_header: \setlength{\parindent}{0pt}
 #+latex_header: \setlength{\parskip}{1em}
@@ -44,7 +44,7 @@ Tight now llm is my main source of truth. And I do not want to rely on llm too m
 
 I need some structure to start learning. Something I can start off.
 
-* Questions
+* General questions
 
 ** DONE What is cerebral activity?
 
@@ -66,7 +66,18 @@ Scikit-learn is a python library, which focuses on machine learning and data ana
 
 Dimensionality reduction is the process of transforming data from high-dimensional space int lower-dimensional one, while preserving as much information of structure as possible.
 
-* V.1.1 Preprocessing
+
+** TODO Is there a difference between imagined and executed movement?
+
+* V.1.1 Preprocessing, parsing and formating
 
 ** TODO Maybe there are channels that I need to ignore?
+
+
 ** TODO What frequency bands I am looking for?
+
+** TODO What is CSP?
+
+* V.1.2 Treatment pipeline
+
+* V.1.3 Implementation

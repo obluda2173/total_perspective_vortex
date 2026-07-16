@@ -2,7 +2,7 @@
 #+author: Erik An
 #+email: obluda2173@gmail.com
 #+date: <2026-07-11>
-#+lastmod: <2026-07-11 12:13>
+#+lastmod: <2026-07-15 23:14>
 #+latex: \newpage
 #+latex_header: \setlength{\parindent}{0pt}
 #+latex_header: \setlength{\parskip}{1em}
@@ -154,8 +154,6 @@ As such the PCA considers your dataset and determine new basis components, sorte
 how much those axises account for variations in the data.
 
 #+CAPTION: PCA principal components on a 2D scatter of data points.
-#+NAME: fig:pca
-[[file:images/pca-principal-components.png]]
 
 The CSP or common spatial patterns, analyses the data depending on the output
 classes and try to maximize the variations between them.
@@ -188,8 +186,6 @@ covariance matrix estimation.
 *** Train, Validation and Test
 
 #+CAPTION: All Data → Training data / Test data. Training data split into 5 folds across 5 splits (Finding Parameters); Test data used for Final evaluation.
-#+NAME: fig:cv
-[[file:images/train-validation-test.png]]
 
 - You have to use =cross_val_score= on the whole processing pipeline, to evaluate
   your classification.
@@ -266,3 +262,4 @@ Turn your work in using your =GiT= repository, as usual. Only work present on yo
 repository will be graded in defense.
 
 Only the python program needs to be present on your repository and not the dataset.
+
