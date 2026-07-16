@@ -32,7 +32,7 @@ filtered = raw.copy()
 # PREPROCESSING AND FILTERING #
 ###############################
 
-eegbci.standardize(filtered) # standardizing channel names
+eegbci.standardize(filtered)                             # standardizing channel names
 montage = make_standard_montage("standard_1005")         # loading standard 1005
 filtered.set_montage(montage)                            # setting raw to 1005
 filtered.annotations.rename(dict(T1="hands", T2="feet")) # renaming

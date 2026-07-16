@@ -2,7 +2,7 @@
 #+author: Erik An
 #+email: obluda2173@gmail.com
 #+date: <2026-07-16>
-#+lastmod: <2026-07-16 13:05>
+#+lastmod: <2026-07-16 17:37>
 #+latex: \newpage
 #+latex_header: \setlength{\parindent}{0pt}
 #+latex_header: \setlength{\parskip}{1em}
@@ -93,7 +93,52 @@ If covarience matrix is taking form of:
 
 The algorithm starts with $\Sigma^{(+)}$ and $\Sigma^{(-)}$ (over band-pass filtered EEG signals). They capture how electrical activity from each channel varies and covaries with one another during two states.
 
+** Symbols
+
+- $C$ :: number of EEG channels
+
+- $T$ :: number of time samples in one trial
+
+- $x$ :: a signal at one time point, a $C$ length vector (one value per channel)
+
+- $X_i$ :: trial $i$, a $C \times T$ matrix (channel x time), band-pass filtered
+
+- $|\mathcal{J}_{c}|$ :: number of trials (for relative sign, ($c \in \{+, -\}$)
+
+- $\Sigma^{(c)}$ :: average spatial covariance, a $C \times C$ matrix ($c \in \{+, -\}$)
+
+- $W$ :: a filter $C \times C$ matrix, its columns are the filters
+
+- $\Lambda^{(c)}$ :: a diagonal matrix holding the filtered signal variance, one per class
 
 * Objective
 
 The goal of the CSP algorithm is to find weights (a spatial filter) such that for your electrodes that makes the signal variance huge for Class A (e.g. left hand motor imagery) and tiny for Class B (e.g. right hand motor imagery).
+
+* Implementation
+
+** =CSP.fit(self, X: npt.NDArray[np.int_], y: npt.NDArray[np.int_])=
+
+Create:
+
+(accessable from args)
+$$\Sigma^{(c)} = \dfrac{\sum_{i \in \mathcal{J}_{c}} X_i X_i^{\top}}{|\mathcal{J}_{c}|} \qquad (c \in \{+, -\})$$
+
+(not accessible from args, two unknowns)
+$$W^{\top} \Sigma^{(c)} W = \Lambda^{(c)}$$
+
+(not accessible from args, useful identity)
+$$\Lambda^{(+)} + \Lambda^{(-)} = I$$
+
+(the key)
+$$\Sigma^{(+)} w = \lambda \Sigma^{(-)} w$$
+
+
+\begin{align*}
+\Sigma^{( +)} w &= \lambda \Sigma^{( -)} w \\
+(\Sigma^{( -)})^{-1}\Sigma^{( +)} w &= \lambda w \\
+M w &= \lambda w \qquad (M = (\Sigma^{( -)})^{-1}\Sigma^{( +)}) \\
+M w - \lambda w &= 0 \\
+(M - \lambda I) w &= 0 \\
+&\Rightarrow \det(M - \lambda I) = 0
+\end{align*}
