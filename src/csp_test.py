@@ -61,7 +61,7 @@ def data():
     eegbci.standardize(raw)
     raw.set_montage(make_standard_montage("standard_1005"))
     raw.annotations.rename(dict(T1="hands", T2="feet"))
-    raw.set_eeg_reference(projection=True)
+    # raw.set_eeg_reference(projection=True)
     raw.filter(7.0, 30.0, fir_design="firwin", skip_by_annotation="edge")
 
     picks = pick_types(raw.info, meg=False, eeg=True, stim=False,
