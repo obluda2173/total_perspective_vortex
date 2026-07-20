@@ -77,7 +77,6 @@ cv_split = cv.split(epochs_data_train)
 # THE MACHINE LEARNING PIPELINE #
 #################################
 
-# classifier
 lda = LinearDiscriminantAnalysis()
 csp = CSP(n_components=4, reg=None, log=True, norm_trace=False)
 
